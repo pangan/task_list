@@ -17,7 +17,8 @@ Description
   6. By moving the task from Doing to Done column, a timestamp is written automatically.
      It shows the time user has completed the task. 
   7. It is possible to filter tasks by pressing Show All/My tasks
-  8. It is possible to filter (turn off) each column by clicking on its header.     
+  8. It is possible to filter (turn off) each column by clicking on its header.
+  9. Click on a task title to view, edit or delete it.     
 
 
 Installation

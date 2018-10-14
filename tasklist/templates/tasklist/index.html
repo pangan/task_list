@@ -1,0 +1,83 @@
+{% extends 'tasklist/base.html' %}
+
+{% block content %}
+
+Welcome : {{ user.get_username }} | <a href="{% url 'task' %}">Create</a> | <a href="
+{% url 'index' %}?f=0">Show all</a> |
+    <a href="{% url 'index' %}?f=1">My tasks</a> |
+    <a href="{% url 'logout' %}?next=/">Logout</a>
+    <hr>
+    <table align="center">
+        <tr>
+            <td id="table_title_0" class="tasks_table box_title_0 table_title"
+                onclick="toggleColumn('0')">ToDo</td>
+            <td id="table_title_1" class="tasks_table box_title_1 table_title"
+                onclick="toggleColumn('1')">Doing</td>
+            <td id="table_title_2" class="tasks_table box_title_2 table_title"
+                onclick="toggleColumn('2')">Done</td>
+        </tr>
+        <tr>
+
+            {% for tasks_column in tasks_list %}
+
+            <td class="tasks_table">
+                <div id="task_column_{{ forloop.counter0 }}">
+                {% for task in tasks_column %}
+                    <div class="task_box task_box_{{ task.status }}">
+                        <div class="box_title box_title_{{ task.status }}">
+
+                            <a href="{% url 'task' %}?id={{ task.id }}" class="task_title"
+                            >{{ task.title }}</a>
+
+                        </div>
+                        <div class="description">
+                            {{ task.description|slice:"0:40" }}...
+                        </div>
+                        <div class="task_info">
+
+                            Assignee: {{ task.assignee }}<br>
+                            Created: {{ task.created }}<br>
+                            Started: {{ task.started }}<br>
+                            Completed: {{ task.completed }}<br>
+                        </div>
+
+                        {% if user.get_username == task.assignee %}
+                        <div class="move_button">
+                            {% if task.status != 2 %}
+                            <span style="float: right">
+                                <a href="{% url 'move' %}?id={{ task.id }}&move=1&status=
+{{ task.status }}"> >> </a>
+                            </span>
+                            {% endif %}
+                            {% if task.status != 0 %}
+                            <span style="float: left">
+                                <a href="{% url 'move' %}?id={{ task.id }}&move=0&status=
+{{ task.status }}"> << </a>
+                            </span>
+                            {% endif %}
+                        <br>
+                        </div>
+                        {% endif %}
+
+                    </div>
+
+                {% endfor %}
+
+            </td>
+            {% endfor %}
+
+
+        </tr>
+    </table>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+    function toggleColumn(status_code) {
+
+        $( "#table_title_"+status_code).toggleClass("turned_off")
+        $( "#task_column_"+status_code ).toggle();
+    }
+    </script>
+
+
+{% endblock %}
+

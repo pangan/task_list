@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/tasklist.css' %}">
+    <meta charset="UTF-8">
+    <title>Task List</title>
+
+</head>
+<body>
+<span class="site_title">Tasks List</span>
+<hr>
+{% block content %}
+{% endblock %}
+<hr>
+By Amir Mofakhar, amir@mofakhar.info
+</body>

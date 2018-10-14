@@ -1,0 +1,24 @@
+<div class="task_box task_box_{% if task_obj %}{{ task_obj.status }}{% else %}0{% endif %}" style="width:50%;height:auto">
+    <form method="post" action="?id={{ task_obj.id }}">
+    {% csrf_token %}
+        <li>Status :
+        {% if task_obj.status == 2 %}
+            Done
+        {% elif task_obj.status == 1%}
+            Doing
+        {% else %}
+            ToDo
+        {% endif %}
+        </li>
+    <li>{{ form.title.label }}: {{ form.title }}</li>
+    <li>{{ form.description.label }}: </li>
+    {{ form.description }}
+    <br>
+    <li>Assignee: {{ user.get_username }} </li>
+
+    <li>Created: {{ task_obj.created }}</li>
+    <li>Started: {{ task_obj.started }}</li>
+    <li>Completed: {{ task_obj.completed }}</li>
+        <input type="submit" value="Save">
+    </form>
+</div>

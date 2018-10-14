@@ -1,0 +1,95 @@
+body {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.site_title {
+  text-align: center;
+  font-size: xx-large;
+}
+
+.todo_title {
+  text-align: center;
+  background-color: darkorange;
+  width: 100%;
+}
+
+.doing_title {
+  text-align: center;
+  background-color: #ff5050;
+  width: 100%;
+}
+
+.done_title{
+  text-align: center;
+  background-color: #00e64d;
+  width: 100%;
+}
+
+.move_button {
+
+}
+
+.task_box {
+  border-radius: 15px;
+  margin-top: 5px;
+  padding: 10px;
+
+}
+
+.task_box_2 {
+  border: 3px solid #00e64d;
+}
+
+.task_box_1 {
+  border: 3px solid orange;
+}
+
+.task_box_0 {
+  border: 3px solid #ff5050;
+}
+
+.task_info {
+  font-size: x-small;
+}
+
+.box_title{
+  text-align: center;
+  width: 100%;
+}
+
+.box_title_2{
+  background-color: #00e64d;
+}
+
+.box_title_1{
+  background-color: orange;
+}
+
+.box_title_0{
+  background-color: #ff5050;
+}
+
+.turned_off{
+  background-color: #dddddd;
+}
+
+.task_title {
+  font-style: oblique;
+  color: black;
+}
+
+.table_title{
+  text-align: center;
+  font-size: large;
+  color: #111111;
+  width: 240px;
+  cursor: pointer;
+
+}
+
+.tasks_table {
+  vertical-align: top;
+  padding: 15px;
+  border-radius: 15px;
+
+}

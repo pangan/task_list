@@ -1,0 +1,20 @@
+<div class="task_box task_box_{{ task_obj.status }}" style="width:50%;height:auto">
+<li>Status:
+{% if task_obj.status == 2 %}
+    Done
+{% elif task_obj.status == 1%}
+    Doing
+{% else %}
+    ToDo
+{% endif %}
+</li>
+<br>
+<li>Title: {{ task_obj.title }}</li>
+<li>Description: {{ task_obj.description }}</li>
+<br>
+<li>Assignee: {{ task_obj.assignee }}</li>
+<br>
+<li>Created: {{ task_obj.created }}</li>
+<li>Started: {{ task_obj.started }}</li>
+<li>Completed: {{ task_obj.completed }}</li>
+</div>

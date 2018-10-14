@@ -43,11 +43,11 @@ Use the below command to run the server:
        
 Use below url to access it:
 
-       http://localhost:8080/
+       http://localhost:8000/
         
 To add a new user use below address:
 
-       http://localhost:8080/admin
+       http://localhost:8000/admin
                  
 
 Unit tests
